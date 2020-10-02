@@ -8,7 +8,7 @@ function App() {
   const y = Big('123456.7e-3');                 // 'new' is optional
   const z = new Big(x);
   return (
-    <div className='app'>
+    <div className="app">
       <h2>Empty project</h2>
       <p>Is Big working?</p>
       <p>{ String(x.eq(y) && x.eq(z) && y.eq(z)) }</p>
