@@ -1,11 +1,10 @@
 import React from 'react';
-import Big from 'big.js'
-import './App.css'
-
+import Big from 'big.js';
+import './App.css';
 
 function App() {
   const x = new Big(123.4567);
-  const y = Big('123456.7e-3');                 // 'new' is optional
+  const y = Big('123456.7e-3');
   const z = new Big(x);
   return (
     <div className="app">
