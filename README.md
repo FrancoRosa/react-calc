@@ -8,7 +8,7 @@ This calculator app was developed using react, it is deployed on heroku
 
 ## Deploy
 To deploy this project localy, download or clone this repo
-1. Install the required libraries (react, react-dom, etc.)
+1. Install the required libraries (react, react-dom, big, etc.)
 ```
     npm install
 ```

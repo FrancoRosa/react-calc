@@ -9,8 +9,10 @@ function App() {
   return (
     <div className="app">
       <h2>Empty project</h2>
-      <p>Is Big working?</p>
-      <p>{ String(x.eq(y) && x.eq(z) && y.eq(z)) }</p>
+      <span>
+        Is Big working?:
+        <strong>{ String(x.eq(y) && x.eq(z) && y.eq(z)) }</strong>
+      </span>
     </div>
   );
 }
