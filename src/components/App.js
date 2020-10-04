@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 const Display = ({ text }) => (
-  <p className="display">
+  <p id="display">
     { text }
   </p>
 );
@@ -17,7 +17,7 @@ Display.propTypes = {
 };
 
 const Button = ({ text }) => (
-  <button type="button">
+  <button id="button" type="button">
     { text }
   </button>
 );
@@ -27,7 +27,7 @@ Button.propTypes = {
 };
 
 const ButtonPanel = () => (
-  <div>
+  <div id="button-panel">
     <div>
       <Button text="AC" />
       <Button text="+/-" />
