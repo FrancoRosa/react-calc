@@ -1,15 +1,12 @@
 import React from 'react';
-import Big from 'big.js';
 import PropTypes from 'prop-types';
 import './App.css';
 
-const Display = props => {
-  return (
-    <p className="display">
-      { props.text }
-    </p>
-  )
-};
+const Display = ({ text }) => (
+  <p className="display">
+    { text }
+  </p>
+);
 
 Display.defaultProps = {
   text: '0',
@@ -19,60 +16,57 @@ Display.propTypes = {
   text: PropTypes.string,
 };
 
-const Button = props => {
-  return (
-    <button type="button">
-      { props.button }
-    </button>
-  );
-};
+const Button = ({ text }) => (
+  <button type="button">
+    { text }
+  </button>
+);
 
 Button.propTypes = {
-  button: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
-const ButtonPanel = props => {
-  return (
+const ButtonPanel = () => (
+  <div>
     <div>
-      <div>
-        <Button button='AC' />
-        <Button button='+/-' />
-        <Button button='%' />
-        <Button button='÷' />
-      </div>
-      <div>
-        <Button button='7' />
-        <Button button='8' />
-        <Button button='9' />
-        <Button button='X' />
-      </div>
-      <div>
-        <Button button='4' />
-        <Button button='5' />
-        <Button button='6' />
-        <Button button='-' />
-      </div>
-      <div>
-        <Button button='0' />
-        <Button button='.' />
-        <Button button='=' />
-        <Button button='?' />
-      </div>
-
+      <Button text="AC" />
+      <Button text="+/-" />
+      <Button text="%" />
+      <Button text="÷" />
     </div>
-  );
-};
-
-const App = () => {
-  const x = new Big(123.4567);
-  const y = Big('123456.7e-3');
-  const z = new Big(x);
-  return (
-    <div className="app">
-      <Display />
-      <ButtonPanel />
+    <div>
+      <Button text="7" />
+      <Button text="8" />
+      <Button text="9" />
+      <Button text="X" />
     </div>
-  );
-};
+    <div>
+      <Button text="4" />
+      <Button text="5" />
+      <Button text="6" />
+      <Button text="-" />
+    </div>
+    <div>
+      <Button text="1" />
+      <Button text="2" />
+      <Button text="3" />
+      <Button text="+" />
+    </div>
+    <div>
+      <Button text="0" />
+      <Button text="." />
+      <Button text="=" />
+      <Button text="?" />
+    </div>
+
+  </div>
+);
+
+const App = () => (
+  <div className="app">
+    <Display />
+    <ButtonPanel />
+  </div>
+);
 
 export default App;
