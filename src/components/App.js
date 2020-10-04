@@ -5,25 +5,25 @@ import './App.css';
 
 const Display = props => {
   return (
-    <div>
-      { props.display }
-    </div>
-  );
+    <p className="display">
+      { props.text }
+    </p>
+  )
 };
 
 Display.defaultProps = {
-  display: '0',
+  text: '0',
 };
 
 Display.propTypes = {
-  display: PropTypes.string,
+  text: PropTypes.string,
 };
 
 const Button = props => {
   return (
-    <span>
+    <button type="button">
       { props.button }
-    </span>
+    </button>
   );
 };
 

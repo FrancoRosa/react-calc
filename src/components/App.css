@@ -25,4 +25,19 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border: 1px solid;
+  padding: 1em;
+}
+
+button {
+  height: 2em;
+  width: 3em;
+  margin: 0.2em;
+}
+
+.display {
+  text-align: right;
+  width: 100%;
+  background-color: lightgrey;
+  padding: 0.5em;
 }
