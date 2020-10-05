@@ -1,3 +1,5 @@
+import operate from './operate';
+
 const calculate = ({ total, next, operation }, buttonName) => {
   const result = {
     total,
@@ -5,14 +7,15 @@ const calculate = ({ total, next, operation }, buttonName) => {
     operation,
   };
 
-  switch (buttonName) {
-    case '+/-':
-      result.total *= -1;
-      result.next *= -1;
-      break;
+  const operations = ['÷', 'x', '-', '+', '%'];
 
-    default:
-      break;
+  if (operations.includes(buttonName)) {
+    result.total = operate(result.total, result.next, buttonName);
+  }
+
+  if (buttonName === '+/-') {
+    result.total *= -1;
+    result.next *= -1;
   }
 
   return result;
