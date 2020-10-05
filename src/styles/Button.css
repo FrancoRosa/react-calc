@@ -1,21 +1,22 @@
 button {
-  height: 2em;
-  margin: 0.02em;
+  height: 100px;
+  margin: 0;
   font-size: 32px;
   padding: 0;
+  border-color: lightgray;
 }
 
 .common {
-  width: 4em;
+  width: 25%;
   background-color: #e0e0e0;
 }
 
 .double {
-  width: 8.04em;
+  width: 50%;
   background-color: #e0e0e0;
 }
 
 .operator {
-  width: 4em;
+  width: 25%;
   background-color: #f5913e;
 }

@@ -1,11 +1,15 @@
 #display {
   text-align: right;
-  width: 13.5em;
+  width: 690px;
   background-color: #848593;
-  border-radius: 0.02em;
-  height: 1.4em;
-  margin: 0.02em;
-  padding: 0.4em;
-  font-size: 36px;
+  height: 80px;
+  padding: 10px 5px;
+  margin: 1px;
+  font-size: 40px;
   color: white;
+  font-weight: bold;
+}
+
+#display > p {
+  margin: 0.5em 0.1em;
 }

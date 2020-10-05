@@ -1,3 +1,5 @@
 #button-panel {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-width: 700px;
 }
