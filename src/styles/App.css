@@ -1,0 +1,7 @@
+.app {
+  width: 700px;
+  min-width: 16em;
+  font-size: 32px;
+  border: 1px solid;
+  border-color: grey;
+}

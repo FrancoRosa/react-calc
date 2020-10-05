@@ -1,0 +1,15 @@
+#display {
+  text-align: right;
+  width: 690px;
+  background-color: #848593;
+  height: 80px;
+  padding: 10px 5px;
+  margin: 1px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+}
+
+#display > p {
+  margin: 0.5em 0.1em;
+}
