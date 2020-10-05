@@ -1,5 +1,21 @@
-#button {
+button {
   height: 2em;
-  width: 3em;
-  margin: 0.2em;
+  margin: 0.02em;
+  font-size: 32px;
+  padding: 0;
+}
+
+.common {
+  width: 4em;
+  background-color: #e0e0e0;
+}
+
+.double {
+  width: 8.04em;
+  background-color: #e0e0e0;
+}
+
+.operator {
+  width: 4em;
+  background-color: #f5913e
 }
