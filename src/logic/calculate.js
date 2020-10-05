@@ -16,6 +16,6 @@ const calculate = ({ total, next, operation }, buttonName) => {
   }
 
   return result;
-}
+};
 
 export default calculate;
