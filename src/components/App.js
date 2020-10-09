@@ -12,6 +12,7 @@ class App extends React.Component {
       next: null,
       operation: null,
     };
+    this.handleClick = this.handleClick.bind();
   }
 
   handleClick(buttonName) {
@@ -20,15 +21,14 @@ class App extends React.Component {
       total: result.total,
       next: result.next,
       operation: result.operation,
-
     });
   }
 
   render() {
     return (
       <div className="app">
-        <Display />
-        <ButtonPanel />
+        <Display text={this.state.total} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
