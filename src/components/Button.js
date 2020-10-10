@@ -2,30 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Button.css';
 
-const Button = ({ text, wide, color }) => {
+// const handleClick = (props) => {
+//   console.log('button: ');
+//   return props.clickHandler;
+// };
+
+const Button = ({ clickHandler, text, wide, color }) => {
   let className = '';
   if (wide) className = 'double';
 
-  const button = (
+  const styles = {
+    /* stylelint-disable-next-line */
+    backgroundColor: color,
+  };
+
+  const handleClick = (e, text) => {
+    return clickHandler(text);
+  };
+
+  return (
     <button
       id="button"
       type="button"
       className={className}
-      style={{
-        /* stylelint-disable-next-line */
-        backgroundColor: color,
-      }}
+      style={styles}
+      onClick={e => handleClick(e, text)}
     >
       {text}
     </button>
   );
-  return button;
 };
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
