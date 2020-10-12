@@ -1,20 +1,28 @@
 import Big from 'big.js';
+import { number } from 'prop-types';
 
 const operate = (numberOne, numberTwo, operation) => {
+  
+  if (numberOne == 'Error') return 'Error';
+  if (numberTwo == null) numberTwo = numberOne;
+
   let result = new Big(numberOne);
   const value = new Big(numberTwo);
+  console.log(value);
+  console.log(result);
+
   switch (operation) {
     case '÷':
-      result /= value;
+      result = value != 0 ? result.div(value) : 'Error';
       break;
     case 'x':
-      result *= value;
+      result = result.times(value);
       break;
     case '-':
-      result -= value;
+      result = result.minus(value);
       break;
     case '+':
-      result += value;
+      result = result.plus(value);
       break;
     case '%':
       result *= 0.01;

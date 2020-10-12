@@ -8,8 +8,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: null,
-      next: null,
+      total: '0',
+      next: '0',
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -17,6 +17,7 @@ class App extends React.Component {
   }
 
   handleClick(buttonName) {
+    console.log(buttonName);
     const result = calculate(this.state, buttonName);
     this.setState({
       total: result.total,
@@ -28,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Display text={ this.state.total == null ? '0' : this.state.total } />
+        <Display text={ this.state.next == null ? this.state.total : this.state.next } />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );

@@ -11,29 +11,38 @@ const calculate = ({ total, next, operation }, buttonName) => {
   const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
   if (operations.includes(buttonName)) {
-    if (result.operation == null) result.next = result.total;
-    else result.total = String(operate(result));
-    result.operation = buttonName;
+    console.warn(result);
+    if (result.operation == null) {
+      if (result.next != null) {
+        result.total = result.next;
+        result.next = null;
+      }
+    } else {
+      result.total = String(operate(result.total, result.next, result.operation));
+      result.next = null;
+    }
+    result.operation = buttonName !== '=' ? buttonName : null;
   }
 
   if (numbers.includes(buttonName)) {
-    if (result.total != null && result.total !== '0') result.total += buttonName;
-    else result.total = buttonName;
+    if (result.next != null && result.next !== '0') result.next += buttonName;
+    else result.next = buttonName;
   }
 
   if (buttonName === '+/-') {
-    result.total = String(-1 * parseFloat(result.total));
+    result.next = String(-1 * parseFloat(result.next));
   }
 
   if (buttonName === 'AC') {
-    result.total = '0';
+    result.next = '0';
+    if (result.total == 'Error') result.total = '0';
   }
 
   if (buttonName === '.') {
-    if (result.total == null) result.total = '0.';
-    if (!result.total.includes('.')) result.total += '.';
+    if (result.next == null) result.next = '0.';
+    if (!result.next.includes('.')) result.next += '.';
   }
-
+  console.log(result);
   return result;
 };
 
