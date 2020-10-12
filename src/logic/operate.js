@@ -19,9 +19,6 @@ const operate = (numberOne, numberTwo, operation) => {
     case '+':
       result = result.plus(value);
       break;
-    case '%':
-      result *= 0.01;
-      break;
     default:
       break;
   }
