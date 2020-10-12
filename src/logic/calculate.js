@@ -11,7 +11,6 @@ const calculate = ({ total, next, operation }, buttonName) => {
   const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
   if (operations.includes(buttonName)) {
-    console.warn(result);
     if (result.operation == null) {
       if (result.next != null) {
         result.total = result.next;
@@ -35,14 +34,13 @@ const calculate = ({ total, next, operation }, buttonName) => {
 
   if (buttonName === 'AC') {
     result.next = '0';
-    if (result.total == 'Error') result.total = '0';
+    if (result.total === 'Error') result.total = null;
   }
 
   if (buttonName === '.') {
     if (result.next == null) result.next = '0.';
     if (!result.next.includes('.')) result.next += '.';
   }
-  console.log(result);
   return result;
 };
 
