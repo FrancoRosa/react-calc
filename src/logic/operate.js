@@ -8,7 +8,8 @@ const operate = (numberOne, numberTwo, operation) => {
 
   switch (operation) {
     case '÷':
-      result = value !== 0 ? result.div(value) : 'Error';
+      // eslint-disable-next-line eqeqeq
+      result = (value != 0 ? result.div(value) : 'Error');
       break;
     case 'x':
       result = result.times(value).prec(20);

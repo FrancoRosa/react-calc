@@ -1,6 +1,4 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-access-state-in-setstate */
-
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
@@ -16,11 +14,11 @@ class App extends React.Component {
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
-    window.state = this.state;
   }
 
   handleClick(buttonName) {
-    const result = calculate(this.state, buttonName);
+    const values = this.state;
+    const result = calculate(values, buttonName);
     this.setState({
       total: result.total,
       next: result.next,
@@ -29,9 +27,10 @@ class App extends React.Component {
   }
 
   render() {
+    const values = this.state;
     return (
       <div className="app">
-        <Display text={this.state.next == null ? this.state.total : this.state.next} />
+        <Display text={values.next == null ? values.total : values.next} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
