@@ -2,12 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/Button.css';
 
-// const handleClick = (props) => {
-//   console.log('button: ');
-//   return props.clickHandler;
-// };
-
-const Button = ({ clickHandler, text, wide, color }) => {
+const Button = ({
+  clickHandler, text, wide, color,
+}) => {
   let className = '';
   if (wide) className = 'double';
 
@@ -16,9 +13,7 @@ const Button = ({ clickHandler, text, wide, color }) => {
     backgroundColor: color,
   };
 
-  const handleClick = (e, text) => {
-    return clickHandler(text);
-  };
+  const handleClick = (e, text) => clickHandler(text);
 
   return (
     <button

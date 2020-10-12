@@ -1,20 +1,28 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
+  let result = new Big(numberOne);
+  const value = new Big(numberTwo);
   switch (operation) {
     case '÷':
-      return Big(numberOne) / Big(numberTwo);
+      result /= value;
+      break;
     case 'x':
-      return Big(numberOne) * Big(numberTwo);
+      result *= value;
+      break;
     case '-':
-      return Big(numberOne) - Big(numberTwo);
+      result -= value;
+      break;
     case '+':
-      return Big(numberOne) + Big(numberTwo);
+      result += value;
+      break;
     case '%':
-      return Big(numberOne) * Big(numberTwo) * 0.01;
+      result *= 0.01;
+      break;
     default:
-      return Big(numberTwo);
+      break;
   }
+  return result;
 };
 
 export default operate;
