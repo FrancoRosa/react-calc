@@ -33,7 +33,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
   }
 
   if (buttonName === '%') {
-    result.next = String(0.01 * parseFloat(result.next));
+    result.next = result.next == null ? String(0.01 * parseFloat(result.total)) : String(0.01 * parseFloat(result.next));
   }
 
   if (buttonName === 'AC') {
