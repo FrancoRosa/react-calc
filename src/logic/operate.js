@@ -1,20 +1,29 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
+  if (numberOne === 'Error') return 'Error';
+
+  let result = new Big(numberOne);
+  const value = numberTwo == null ? result : new Big(numberTwo);
+
   switch (operation) {
     case '÷':
-      return Big(numberOne) / Big(numberTwo);
+      // eslint-disable-next-line eqeqeq
+      result = (value != 0 ? result.div(value) : 'Error');
+      break;
     case 'x':
-      return Big(numberOne) * Big(numberTwo);
+      result = result.times(value).prec(20);
+      break;
     case '-':
-      return Big(numberOne) - Big(numberTwo);
+      result = result.minus(value);
+      break;
     case '+':
-      return Big(numberOne) + Big(numberTwo);
-    case '%':
-      return Big(numberOne) * Big(numberTwo) * 0.01;
+      result = result.plus(value);
+      break;
     default:
-      return Big(numberTwo);
+      break;
   }
+  return result;
 };
 
 export default operate;

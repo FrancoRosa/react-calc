@@ -1,10 +1,23 @@
 # react-calc
 
-> work in progress ... Millestone 1 Project Setup
+> Calculator build with React!
 
-This calculator app was developed using react, it is deployed on heroku
+This calculator app was developed using React, it is deployed on heroku.
+In uses the Big.js library to manage large numbers.
 
-# Work in progress
+<p align="center">
+  <a href="https://big-react-calc.herokuapp.com">
+    <img width="480" height="410" src="./img/calcdemo.gif">
+  </a>
+</p> 
+
+## Liveview
+  - [Live version](https://big-calc-react.herokuapp.com) 
+  
+  ## Built With
+  - JavaScript (ES6)
+  - React
+
 
 ## Deploy
 To deploy this project localy, download or clone this repo

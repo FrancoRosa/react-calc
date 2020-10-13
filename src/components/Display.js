@@ -9,7 +9,7 @@ const Display = ({ text }) => (
 );
 
 Display.defaultProps = {
-  text: '0',
+  text: '0.',
 };
 
 Display.propTypes = {

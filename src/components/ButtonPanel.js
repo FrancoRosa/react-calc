@@ -1,39 +1,44 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 import '../styles/ButtonPanel.css';
 
-const ButtonPanel = () => (
+const ButtonPanel = ({ clickHandler }) => (
   <div id="button-panel">
     <div>
-      <Button text="AC" color="#e0e0e0" />
-      <Button text="+/-" color="#e0e0e0" />
-      <Button text="%" color="#e0e0e0" />
-      <Button text="÷" />
+      <Button clickHandler={clickHandler} text="AC" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="+/-" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="%" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="÷" />
     </div>
     <div>
-      <Button text="7" color="#e0e0e0" />
-      <Button text="8" color="#e0e0e0" />
-      <Button text="9" color="#e0e0e0" />
-      <Button text="x" />
+      <Button clickHandler={clickHandler} text="7" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="8" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="9" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="x" />
     </div>
     <div>
-      <Button text="4" color="#e0e0e0" />
-      <Button text="5" color="#e0e0e0" />
-      <Button text="6" color="#e0e0e0" />
-      <Button text="-" />
+      <Button clickHandler={clickHandler} text="4" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="5" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="6" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="-" />
     </div>
     <div>
-      <Button text="1" color="#e0e0e0" />
-      <Button text="2" color="#e0e0e0" />
-      <Button text="3" color="#e0e0e0" />
-      <Button text="+" />
+      <Button clickHandler={clickHandler} text="1" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="2" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="3" color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="+" />
     </div>
     <div>
-      <Button text="0" color="#e0e0e0" wide />
-      <Button text="." color="#e0e0e0" />
-      <Button text="=" />
+      <Button clickHandler={clickHandler} text="0" color="#e0e0e0" wide />
+      <Button clickHandler={clickHandler} text="." color="#e0e0e0" />
+      <Button clickHandler={clickHandler} text="=" />
     </div>
   </div>
 );
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;
